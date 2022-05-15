@@ -107,4 +107,9 @@ int main(void)
 		printf("{ + } Inversed matrix : \n");
 		print_matrix(get_inverse(ma_4));
 	// See the rest in features...
+// Free matrix
+	free_matrix(ma_1);
+	free_matrix(ma_2);
+	free_matrix(ma_3);
+	free_matrix(ma_4);
 }

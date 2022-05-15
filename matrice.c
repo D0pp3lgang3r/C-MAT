@@ -30,6 +30,12 @@ Matrix *build_matrix(int rows, int cols, double default_value)
 	return matrix;
 }
 
+void free_matrix(Matrix *matrix)
+{
+	free(matrix->matrix);
+	free(matrix);
+}
+
 Matrix *copy_matrix(Matrix *matrix)
 {
 	Matrix *copy = build_matrix(matrix->rows, matrix->cols, 0);
@@ -45,7 +51,7 @@ Matrix *copy_matrix(Matrix *matrix)
 
 double get_value_in_matrix(Matrix *matrix, int row, int col)
 {
-	if (row <= matrix->rows && col <= matrix->cols-1) // Because we initialise a matrix at zero.
+	if (row <= matrix->rows-1 && col <= matrix->cols-1) // Because we initialise a matrix at zero.
 		return matrix->matrix[row][col];
 	return 1;
 }

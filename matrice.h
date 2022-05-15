@@ -52,6 +52,16 @@ typedef struct Matrix Matrix;
 Matrix *build_matrix(int rows, int cols, double default_value);
 
 /**
+ * @brief Use to destroy matrix inside of the memory
+ * 
+ * @param matrix
+ * Pointor to matrix
+ * 
+ * @return void
+ * */
+void free_matrix(Matrix *matrix);
+
+/**
  * @brief Get the value at a (row, col) position in the matrix
  * 
  * @param matrix
